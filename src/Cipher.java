@@ -1,10 +1,11 @@
 public class Cipher {
     private static char[] alphabet;
 
+    //Constructor Cipher
     public Cipher(char[] alphabet) {
         this.alphabet = alphabet;
     }
-
+    //encrypt method
     public static String encrypt(String text, int shift) {
         StringBuilder encrypttext = new StringBuilder();
         for (char letter : text.toCharArray()) {
@@ -19,6 +20,8 @@ public class Cipher {
 
         return encrypttext.toString();
     }
+
+    //decrypt method
         public static String decrypt (String text,int shift){
             StringBuilder decrypttext = new StringBuilder();
             for (char letter : text.toCharArray()) {
