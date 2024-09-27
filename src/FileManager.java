@@ -1,16 +1,13 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
-public class FileManager {
+public class   FileManager {
 
     //readFile method
-    public static String readFile(String filepath) {
-        try {
-            Path path = Path.of(filepath);
-            return Files.readString(path);
-        } catch (IOException e) {
-          return "No se encontro el archivo"; }
+    public String readFile(String filepath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filepath)));
     }
 
     //writeFile method
@@ -19,7 +16,7 @@ public class FileManager {
             Files.writeString(Path.of(filepath), content);
             System.out.println("Se ha escrito el archivo");
         } catch (Exception e) {
-            System.out.println("No se encontro el archivo");
+            System.out.println("No se pudo escribir el archivo");
         }
     }
 }
